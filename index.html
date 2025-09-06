@@ -1,61 +1,182 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BR2 ‒ Polimento de Faróis</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Hero section with background image and call to action -->
-  <header class="hero">
-    <!-- Dark overlay on top of the background image -->
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <img src="images/logo.jpg" alt="Logo BR2" class="logo">
-      <h1>Polimento de Faróis</h1>
-      <p>Seu farol como novo, onde você estiver.</p>
-      <div class="hero-buttons">
-        <a href="#agendamento" class="btn btn-primary">Agendar agora</a>
-        <!-- Link direto para o WhatsApp da empresa -->
-        <a href="https://wa.me/5516997250041" class="btn btn-secondary" target="_blank" rel="noopener">Fale no&nbsp;WhatsApp</a>
-      </div>
-    </div>
-  </header>
+/*
+ * Estilos principais do site da BR2.
+ * O foco do serviço é o polimento de faróis, com atendimento no local do cliente.
+ * As cores foram inspiradas na identidade visual presente no logo: tons de azul escuro e laranja.
+ */
 
-  <!-- About section -->
-  <section class="about">
-    <h2>Sobre nós</h2>
-    <p>A BR2 é especializada em polimento de faróis. Nosso serviço recupera a claridade e o brilho dos seus faróis, melhorando a estética e a segurança do seu veículo.</p>
-    <p>Diferente das oficinas tradicionais, nós vamos até você! Atendemos em Batatais e região, cuidando do seu carro no conforto da sua casa ou trabalho.</p>
-  </section>
+:root {
+  --primary-color: #f28e1c;       /* Laranja vibrante, semelhante ao número "2" do logo */
+  --secondary-color: #0075b0;     /* Azul, derivado do arco sobre o logo */
+  --dark-bg: #0a0d14;            /* Fundo escuro para alto contraste */
+  --light-text: #f5f5f5;         /* Cor de texto padrão */
+}
 
-  <!-- Services section -->
-  <section class="services">
-    <h2>Nossos serviços</h2>
-    <div class="service-item">
-      <h3>Polimento de Faróis</h3>
-      <p>Eliminamos o amarelado e as manchas do farol, devolvendo transparência e brilho como novo.</p>
-    </div>
-    <div class="service-item">
-      <h3>Atendimento no local</h3>
-      <p>Sem perda de tempo! Nossa equipe leva os equipamentos até o local indicado, oferecendo praticidade e comodidade.</p>
-    </div>
-  </section>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Call‑to‑action / Booking section -->
-  <section class="cta-section" id="agendamento">
-    <h2>Agende seu atendimento</h2>
-    <p>Entre em contato e descubra como podemos restaurar a visibilidade e a aparência dos faróis do seu carro.</p>
-    <a href="https://wa.me/5516997250041" class="btn btn-primary" target="_blank" rel="noopener">Agendar via WhatsApp</a>
-  </section>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  line-height: 1.6;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025&nbsp;BR2 Brilho e Reparo Automotivo. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 580px;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.logo {
+  width: 220px;
+  max-width: 70%;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.hero-buttons .btn {
+  margin: 0 12px;
+}
+
+/* Generic button styling */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: #c37712;
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background: #005a87;
+}
+
+/* Section spacing */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Services styling */
+.services .service-item {
+  margin-bottom: 50px;
+}
+
+.services h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.services p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--light-text);
+}
+
+/* CTA section styling */
+.cta-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-section h2 {
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #01020a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  .logo {
+    width: 180px;
+  }
+  section {
+    padding: 60px 15px;
+  }
+}
